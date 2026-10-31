@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://riyashrestha.id/sitemap.xml
+

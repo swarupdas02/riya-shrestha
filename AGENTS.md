@@ -28,13 +28,17 @@ A single page online CV for **Riya Shrestha** (banking compliance / AML-CFT prof
 
 ```text
 riya-shrestha/
-├── index.html     # The CV markup
-├── styles.css     # All CSS: desktop base, responsive (@media screen), and print (@media print)
-├── CV.md          # Single Source of Truth (SSOT) for all CV text, sections, and links
-├── AGENTS.md      # Project reference and rules for AI agents and developers
-├── favicon.svg    # "RS" monogram icon (primary)
-├── favicon.png    # 512x512 PNG fallback of the same icon
-└── CNAME          # Created by GitHub when the custom domain is saved. Contains: riyashrestha.id
+├── index.html           # Semantic CV markup + SEO / OpenGraph / JSON-LD metadata
+├── styles.css           # All CSS: desktop base, dark mode, responsive (@media screen), and print (@media print)
+├── CV.md                # Single Source of Truth (SSOT) for all CV text, sections, and links
+├── Riya_Shrestha_CV.pdf # Pre-rendered 1-page A4 PDF for direct 1-tap download
+├── og-image.png         # 1200x630 OpenGraph / LinkedIn / WhatsApp preview card
+├── robots.txt           # Search engine crawler directives
+├── sitemap.xml          # XML sitemap for riyashrestha.id
+├── AGENTS.md            # Project reference and rules for AI agents and developers
+├── favicon.svg          # "RS" monogram icon (primary)
+├── favicon.png          # 512x512 PNG fallback of the same icon
+└── CNAME                # Created by GitHub when the custom domain is saved. Contains: riyashrestha.id
 ```
 
 > [!IMPORTANT]
@@ -58,9 +62,11 @@ riya-shrestha/
 
 - **Pure CSS in `styles.css`.** An earlier version used the Tailwind CDN and Google Fonts. Both were removed because headless PDF rendering ran out of time and gave a broken 9 page PDF. Keep the repository self contained with zero external network dependencies.
 - **Responsive layout (`@media screen`):** Scoped strictly to `@media screen` (`max-width: 768px`, `600px`, and `380px`) so tablet and mobile viewports stack cleanly without affecting `@media print`.
+- **Light & Dark Mode (`@media screen`):** Toggled via `html[data-theme="dark"]` (saved in `localStorage` or triggered via `?theme=dark`), strictly scoped to `@media screen` so `@media print` always outputs the light-mode A4 document.
+- **SEO & Social Preview:** Includes `<meta name="description">`, canonical link (`https://riyashrestha.id/`), OpenGraph & Twitter Card tags (`og-image.png`), JSON-LD `Person` schema, `robots.txt`, and `sitemap.xml`.
 - **Font:** system font stack (`-apple-system, Segoe UI, Roboto, Arial…`).
 - **Palette:** slate text (`#0f172a`, `#334155`, `#64748b`), indigo accent (`#4338ca`, `#6366f1`), emerald for the eligibility badge (`#f0fdf4` / `#bbf7d0` / `#14532d`), amber for the scholarship badge.
-- **Screen only elements:** anything with class `.no-print` (the top action bar with the "Print / Save to PDF" button) is hidden when printing.
+- **Screen only elements:** anything with class `.no-print` (the top action bar with "Download PDF" and the theme toggle button, plus `.site-footer`) is hidden when printing.
 
 ### Page sections (in order)
 1. **Header:** name, tagline, and a **2×2 contact grid** (`.contact-matrix`, fixed `92px` columns, `90px` in print). Each item is an icon plus one word linking to its target:
@@ -111,7 +117,17 @@ The CV was checked against the owner's source Markdown and brought back in line 
 
 ## 5. Generating the PDF
 
-Chrome headless did not write a file in the sandboxed environment. **Microsoft Edge headless with a separate profile directory** worked:
+`Riya_Shrestha_CV.pdf` is bundled in the repository for direct 1-tap download. Always regenerate it whenever `index.html` or `styles.css` changes.
+
+**macOS (Google Chrome headless):**
+
+```zsh
+"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new --disable-gpu --no-sandbox \
+  --user-data-dir="/tmp/chrome_pdf_profile" --no-pdf-header-footer \
+  --print-to-pdf="Riya_Shrestha_CV.pdf" "file://$(pwd)/index.html"
+```
+
+**Windows (Microsoft Edge headless with a separate profile directory):**
 
 ```powershell
 $tempDir = Join-Path $env:TEMP "edge_pdf_profile"
@@ -173,7 +189,7 @@ Edge logs "Edge LLM: catalog update failed" errors. These are harmless.
 2. **Propose before editing:** For any text changes, list the exact proposed changes and wait for the owner's go-ahead.
 3. **Follow the style rules in §4:** British English, no em dashes, no unnecessary hyphens in open compounds.
 4. **Keep `CV.md` and `index.html` in lockstep:** Update both files together and run a thorough line-by-line check to confirm zero discrepancies between them.
-5. **Keep `index.html` self contained:** No CDNs, external stylesheets, or external fonts.
+5. **Keep the repository self contained:** Use local `styles.css` only — no CDNs, external stylesheets, or external fonts.
 6. **Verify the PDF (§5):** Regenerate `Riya_Shrestha_CV.pdf` and confirm it is **exactly 1 page** with no right-edge clipping.
-7. **Check visual alignment:** Confirm the 2×2 header button grid and the full-width green eligibility bar still line up flush with the right edge.
-8. **Commit and push:** Commit `CV.md`, `index.html`, and `AGENTS.md` (plus any assets) and push. GitHub Pages redeploys in about a minute.
+7. **Check visual alignment:** Confirm the 2×2 header button grid and the full-width green eligibility bar still line up flush with the right edge across desktop, tablet, mobile, and print.
+8. **Commit and push:** Commit `CV.md`, `index.html`, `styles.css`, `Riya_Shrestha_CV.pdf`, and `AGENTS.md` (plus any assets) and push. GitHub Pages redeploys in about a minute.

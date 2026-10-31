@@ -1,30 +1,125 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="top">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Riya Shrestha - Executive CV</title>
+  <meta name="description"
+    content="Executive CV of Riya Shrestha: Results oriented banking compliance professional with five years of progressive experience at Nepal Investment Mega Bank Limited in Kathmandu, Nepal.">
+  <meta name="author" content="Riya Shrestha">
+  <link rel="canonical" href="https://riyashrestha.id/">
 
-  <!-- Favicon Links (Supports both SVG and PNG) -->
+  <!-- Favicon & Touch Icon Links -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="alternate icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
 
-  <!-- Stylesheet (Screen, Responsive, & Print) -->
+  <!-- OpenGraph / LinkedIn / WhatsApp Social Preview -->
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://riyashrestha.id/">
+  <meta property="og:title" content="Riya Shrestha - Executive CV">
+  <meta property="og:description"
+    content="Compliance • Operational Risk • AML / CFT • Regulatory Governance | Banking compliance professional at Nepal Investment Mega Bank Limited.">
+  <meta property="og:image" content="https://riyashrestha.id/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Riya Shrestha - Executive CV">
+  <meta name="twitter:description" content="Compliance • Operational Risk • AML / CFT • Regulatory Governance">
+  <meta name="twitter:image" content="https://riyashrestha.id/og-image.png">
+
+  <!-- Structured Data (JSON-LD Person Schema) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Riya Shrestha",
+    "url": "https://riyashrestha.id/",
+    "jobTitle": "Junior Officer: Compliance",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Nepal Investment Mega Bank Limited",
+      "url": "https://www.nimb.com.np/en/personal-banking"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Kathmandu",
+      "addressCountry": "NP"
+    },
+    "email": "mailto:riyashrestha1599@gmail.com",
+    "telephone": "+9779843553911",
+    "sameAs": [
+      "https://linkedin.com/in/riya-shrestha-69b6a4194"
+    ],
+    "alumniOf": [
+      {
+        "@type": "CollegeOrUniversity",
+        "name": "Islington College",
+        "url": "https://islington.edu.np/"
+      },
+      {
+        "@type": "CollegeOrUniversity",
+        "name": "Vellore Institute of Technology (VIT)",
+        "url": "https://vit.ac.in/"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Stylesheet (Screen, Responsive, Dark Mode, & Print) -->
   <link rel="stylesheet" href="styles.css">
+
+  <!-- Theme Initializer (Screen-only, Zero External Dependencies) -->
+  <script>
+    (function () {
+      try {
+        var param = new URLSearchParams(window.location.search).get('theme');
+        var saved = param || localStorage.getItem('rs_theme');
+        if (saved === 'dark' || saved === 'light') {
+          document.documentElement.setAttribute('data-theme', saved);
+        }
+      } catch (e) { }
+    })();
+    function toggleTheme() {
+      var html = document.documentElement;
+      var next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      try { localStorage.setItem('rs_theme', next); } catch (e) { }
+    }
+  </script>
 </head>
+
 <body>
 
-  <!-- Screen-only Print Bar -->
-  <div class="action-bar no-print">
+  <!-- Screen-only Top Action Bar -->
+  <nav class="action-bar no-print" aria-label="Document actions">
     <div class="action-badge">
       <span class="dot-live"></span>
       <span>Curriculum Vitae</span>
     </div>
-    <button onclick="window.print()" class="btn-print">
-      <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4H7v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
-      Print / Save to PDF
-    </button>
-  </div>
+
+    <div class="action-controls">
+      <a href="Riya_Shrestha_CV.pdf" download="Riya_Shrestha_CV.pdf" class="btn-print" title="Download 1-page A4 PDF" aria-label="Download 1-page A4 PDF">
+        <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+        <span>Download PDF</span>
+      </a>
+      <button type="button" onclick="toggleTheme()" class="btn-theme" title="Toggle light/dark mode"
+        aria-label="Toggle light or dark mode">
+        <svg class="icon-moon" width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+        </svg>
+        <svg class="icon-sun" width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z">
+          </path>
+        </svg>
+      </button>
+    </div>
+  </nav>
 
   <!-- Main CV Container -->
   <main class="page-container">
@@ -34,25 +129,46 @@
       <div class="header-top">
         <div class="header-title-col">
           <h1 class="candidate-name">RIYA SHRESTHA</h1>
-          <p class="candidate-tagline">Compliance &bull; Operational Risk &bull; AML / CFT &bull; Regulatory Governance</p>
+          <p class="candidate-tagline">Compliance &bull; Operational Risk &bull; AML / CFT &bull; Regulatory Governance
+          </p>
         </div>
 
         <!-- 2x2 Quick Contact Matrix -->
         <div class="contact-matrix">
-          <a href="https://maps.google.com/?q=Kathmandu,+Nepal" target="_blank" rel="noopener" title="Kathmandu, Nepal" class="contact-chip">
-            <svg class="chip-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+          <a href="https://maps.google.com/?q=Kathmandu,+Nepal" target="_blank" rel="noopener" title="Kathmandu, Nepal"
+            aria-label="Location: Kathmandu, Nepal" class="contact-chip">
+            <svg class="chip-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
             <span>Location</span>
           </a>
-          <a href="tel:+9779843553911" title="+977 9843553911" class="contact-chip">
-            <svg class="chip-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+          <a href="tel:+9779843553911" title="+977 9843553911" aria-label="Phone: +977 9843553911" class="contact-chip">
+            <svg class="chip-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
+              </path>
+            </svg>
             <span>Phone</span>
           </a>
-          <a href="mailto:riyashrestha1599@gmail.com" title="riyashrestha1599@gmail.com" class="contact-chip">
-            <svg class="chip-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+          <a href="mailto:riyashrestha1599@gmail.com" title="riyashrestha1599@gmail.com"
+            aria-label="Email: riyashrestha1599@gmail.com" class="contact-chip">
+            <svg class="chip-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+              </path>
+            </svg>
             <span>Email</span>
           </a>
-          <a href="https://linkedin.com/in/riya-shrestha-69b6a4194" target="_blank" rel="noopener" title="linkedin.com/in/riya-shrestha-69b6a4194" class="contact-chip chip-accent">
-            <svg class="chip-icon" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          <a href="https://linkedin.com/in/riya-shrestha-69b6a4194" target="_blank" rel="noopener"
+            title="linkedin.com/in/riya-shrestha-69b6a4194" aria-label="LinkedIn Profile"
+            class="contact-chip chip-accent">
+            <svg class="chip-icon" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+            </svg>
             <span>LinkedIn</span>
           </a>
         </div>
@@ -60,21 +176,32 @@
 
       <!-- Treaty / Legal Eligibility Badge -->
       <div class="treaty-badge">
-        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-        <span><strong>Work Eligibility in India:</strong> Nepali citizen eligible to work in India under the <em>India–Nepal Treaty of Peace and Friendship, 1950</em>.</span>
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+        <span><strong>Work Eligibility in India:</strong> Nepali citizen eligible to work in India under the
+          <em>India–Nepal Treaty of Peace and Friendship, 1950</em>.</span>
       </div>
     </header>
 
     <!-- Professional Summary -->
-    <section>
+    <section id="summary">
       <h2 class="section-title">Executive Summary</h2>
       <p class="summary-text">
-        Results oriented banking compliance professional with five years of progressive experience at <strong>Nepal Investment Mega Bank Limited</strong>. Specialised in operational compliance monitoring, account documentation reviews, internal policy adherence, and Nepal Rastra Bank (NRB) regulatory requirements. Proven track record in discovering account level irregularities, conducting branch inspections, following up with branches on corrective actions, and escalating high risk AML/CFT concerns to the specialised AML Unit. Leverages a unique multidisciplinary background combining an <strong>MBA in Project Management</strong> and a <strong>B.Tech (Computer Science and Engineering)</strong> to drive analytical rigour and tech enabled regulatory compliance across CBS, Finacle, and World-Check.
+        Results oriented banking compliance professional with five years of progressive experience at <strong>Nepal
+          Investment Mega Bank Limited</strong>. Specialised in operational compliance monitoring, account documentation
+        reviews, internal policy adherence, and Nepal Rastra Bank (NRB) regulatory requirements. Proven track record in
+        discovering account level irregularities, conducting branch inspections, following up with branches on
+        corrective actions, and escalating high risk AML/CFT concerns to the specialised AML Unit. Leverages a unique
+        multidisciplinary background combining an <strong>MBA in Project Management</strong> and a <strong>B.Tech
+          (Computer Science and Engineering)</strong> to drive analytical rigour and tech enabled regulatory compliance
+        across CBS, Finacle, and World-Check.
       </p>
     </section>
 
     <!-- Professional Experience -->
-    <section>
+    <section id="experience">
       <h2 class="section-title">Professional Experience</h2>
 
       <!-- Role 1 -->
@@ -82,7 +209,8 @@
         <div class="job-header">
           <div>
             <h3 class="job-title">Junior Officer: Compliance</h3>
-            <a href="https://www.nimb.com.np/en/personal-banking" target="_blank" rel="noopener" class="job-company">Nepal Investment Mega Bank Limited</a>
+            <a href="https://www.nimb.com.np/en/personal-banking" target="_blank" rel="noopener"
+              class="job-company">Nepal Investment Mega Bank Limited</a>
           </div>
           <div class="job-meta">
             May 2022 &ndash; Present &bull; Kathmandu, Nepal
@@ -90,55 +218,78 @@
         </div>
 
         <ul class="job-bullets">
-          <li><strong>Core Compliance Monitoring:</strong> Scrutinise retail and corporate accounts using CBS, Finacle, and internal reporting tools to detect operational irregularities, scheme deviations, and regulatory breaches.</li>
-          <li><strong>Account Lifecycle & Discrepancy Audits:</strong> Audit account scheme changes, charge and fee deductions, interest calculations, and eligibility thresholds; systematically follow up with branches to remediate exceptions.</li>
-          <li><strong>Vulnerable & High Risk Retail Reviews:</strong> Conduct targeted reviews of minor, homemaker, and student accounts for scheme eligibility, KYC gaps, anomalous transaction velocity, and undisclosed beneficial ownership risks.</li>
-          <li><strong>Dormant Account Surveillance:</strong> Scrutinise dormant account reactivations, validating reactivation documentation, operational legitimacy, and post-activation transaction velocity to prevent unauthorised or fraudulent reactivation.</li>
-          <li><strong>Cross-Border, Expat & NRN Compliance:</strong> Review foreign national, refugee, and Non-Resident Nepali (NRN) accounts to guarantee valid regulatory identification, passport/visa documentation, and account operating mandates.</li>
-          <li><strong>Commercial Misuse Detection:</strong> Investigate personal accounts for unauthorised commercial/business use and detect illegitimate tourist account facility operations.</li>
-          <li><strong>AML/CFT Risk Escalation:</strong> Detect red flags and suspicious transaction patterns; compile detailed case summaries for swift escalation to the AML Unit for Suspicious Transaction Report (STR) / Suspicious Activity Report (SAR) determinations.</li>
-          <li><strong>Branch Inspections & Remediation:</strong> Execute onsite branch audits and offsite compliance evaluations; prepare compliance reports and coordinate corrective actions with branches.</li>
-          <li><strong>Staff Training & Capacity Building:</strong> Train newly recruited trainees on AML/CFT principles and internal compliance procedures.</li>
+          <li><strong>Core Compliance Monitoring:</strong> Scrutinise retail and corporate accounts using CBS, Finacle,
+            and internal reporting tools to detect operational irregularities, scheme deviations, and regulatory
+            breaches.</li>
+          <li><strong>Account Lifecycle & Discrepancy Audits:</strong> Audit account scheme changes, charge and fee
+            deductions, interest calculations, and eligibility thresholds; systematically follow up with branches to
+            remediate exceptions.</li>
+          <li><strong>Vulnerable & High Risk Retail Reviews:</strong> Conduct targeted reviews of minor, homemaker, and
+            student accounts for scheme eligibility, KYC gaps, anomalous transaction velocity, and undisclosed
+            beneficial ownership risks.</li>
+          <li><strong>Dormant Account Surveillance:</strong> Scrutinise dormant account reactivations, validating
+            reactivation documentation, operational legitimacy, and post-activation transaction velocity to prevent
+            unauthorised or fraudulent reactivation.</li>
+          <li><strong>Cross-Border, Expat & NRN Compliance:</strong> Review foreign national, refugee, and Non-Resident
+            Nepali (NRN) accounts to guarantee valid regulatory identification, passport/visa documentation, and account
+            operating mandates.</li>
+          <li><strong>Commercial Misuse Detection:</strong> Investigate personal accounts for unauthorised
+            commercial/business use and detect illegitimate tourist account facility operations.</li>
+          <li><strong>AML/CFT Risk Escalation:</strong> Detect red flags and suspicious transaction patterns; compile
+            detailed case summaries for swift escalation to the AML Unit for Suspicious Transaction Report (STR) /
+            Suspicious Activity Report (SAR) determinations.</li>
+          <li><strong>Branch Inspections & Remediation:</strong> Execute onsite branch audits and offsite compliance
+            evaluations; prepare compliance reports and coordinate corrective actions with branches.</li>
+          <li><strong>Staff Training & Capacity Building:</strong> Train newly recruited trainees on AML/CFT principles
+            and internal compliance procedures.</li>
         </ul>
       </div>
 
       <!-- Role 2 -->
-      <div class="job-block" style="border-top: 1px solid #f1f5f9; padding-top: 10px;">
+      <div class="job-block job-block-divider">
         <div class="job-header">
           <div>
             <h3 class="job-title">Management Trainee: Compliance</h3>
-            <a href="https://www.nimb.com.np/en/personal-banking" target="_blank" rel="noopener" class="job-company">Nepal Investment Mega Bank Limited</a>
+            <a href="https://www.nimb.com.np/en/personal-banking" target="_blank" rel="noopener"
+              class="job-company">Nepal Investment Mega Bank Limited</a>
           </div>
           <div class="job-meta">
             May 2021 &ndash; May 2022 &bull; Kathmandu, Nepal
           </div>
         </div>
-        <p style="font-size: 11px; color: #334155; line-height: 1.48; margin-top: 3px;">
-          Supported end-to-end operational compliance reviews against internal bank policies and Nepal Rastra Bank directives. Assisted with documentation, issue follow-up, and branch coordination.
+        <p class="job-summary">
+          Supported end-to-end operational compliance reviews against internal bank policies and Nepal Rastra Bank
+          directives. Assisted with documentation, issue follow-up, and branch coordination.
         </p>
       </div>
     </section>
 
     <!-- Education -->
-    <section>
+    <section id="education">
       <h2 class="section-title">Education</h2>
 
       <div class="edu-item">
         <div>
           <h3 class="edu-degree">Master of Business Administration (MBA) in Project Management</h3>
-          <div class="edu-school"><a href="https://islington.edu.np/" target="_blank" rel="noopener" class="edu-link">Islington College</a> &bull; Kathmandu, Nepal</div>
+          <div class="edu-school"><a href="https://islington.edu.np/" target="_blank" rel="noopener"
+              class="edu-link">Islington College</a> &bull; Kathmandu, Nepal</div>
           <div class="scholarship-badge">
-            <svg width="12" height="12" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+            <svg width="12" height="12" fill="currentColor" viewBox="0 0 20 20">
+              <path
+                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+              </path>
+            </svg>
             AAA Scholarship (2026): Awarded for Academic Excellence, Attendance, & Attitude
           </div>
         </div>
         <div class="job-meta">2024 &ndash; 2026</div>
       </div>
 
-      <div class="edu-item" style="margin-top: 6px;">
+      <div class="edu-item edu-item-spaced">
         <div>
           <h3 class="edu-degree">B.Tech (Computer Science and Engineering)</h3>
-          <div class="edu-school"><a href="https://vit.ac.in/" target="_blank" rel="noopener" class="edu-link">Vellore Institute of Technology (VIT)</a> &bull; Tamil Nadu, India</div>
+          <div class="edu-school"><a href="https://vit.ac.in/" target="_blank" rel="noopener" class="edu-link">Vellore
+              Institute of Technology (VIT)</a> &bull; Tamil Nadu, India</div>
         </div>
         <div class="job-meta">
           2017 &ndash; 2021 &bull; CGPA: 7.81 / 10
@@ -147,13 +298,17 @@
     </section>
 
     <!-- Core Competencies & Skills -->
-    <section>
+    <section id="skills">
       <h2 class="section-title">Core Competencies & Skills</h2>
 
       <div class="skills-grid">
         <div class="skill-box">
           <div class="skill-heading">
-            <svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+            <svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
+              </path>
+            </svg>
             <span>Operational Compliance & Risk</span>
           </div>
           <ul class="skill-list">
@@ -169,7 +324,11 @@
 
         <div class="skill-box">
           <div class="skill-heading">
-            <svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+            <svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z">
+              </path>
+            </svg>
             <span>AML / CFT & Technical Systems</span>
           </div>
           <ul class="skill-list">
@@ -177,7 +336,8 @@
             <li>KYC, CDD, and ECDD Reviews</li>
             <li>Beneficial Ownership Checks</li>
             <li>Dormant Account & Foreign/Refugee/NRN Surveillance</li>
-            <li>Core Banking Systems: <strong>Finacle</strong>, <strong>CBS</strong>, & <strong>World-Check</strong></li>
+            <li>Core Banking Systems: <strong>Finacle</strong>, <strong>CBS</strong>, & <strong>World-Check</strong>
+            </li>
             <li>Excel & Compliance Reporting</li>
           </ul>
         </div>
@@ -185,7 +345,7 @@
     </section>
 
     <!-- Certifications -->
-    <section>
+    <section id="certifications">
       <h2 class="section-title">Certifications & Interests</h2>
       <div class="cert-row">
         <span class="cert-dot"></span>
@@ -195,5 +355,15 @@
 
   </main>
 
+  <!-- Screen-only Footer -->
+  <footer class="site-footer no-print">
+    <span>&copy; 2026 Riya Shrestha &bull; Kathmandu, Nepal</span>
+    <div class="footer-links">
+      <a href="#top">Back to top &uarr;</a>
+      <a href="Riya_Shrestha_CV.pdf" download="Riya_Shrestha_CV.pdf">Download A4 PDF</a>
+    </div>
+  </footer>
+
 </body>
+
 </html>

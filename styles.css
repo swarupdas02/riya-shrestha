@@ -4,6 +4,9 @@
   margin: 0;
   padding: 0;
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   background-color: #f1f5f9;
@@ -14,9 +17,10 @@ body {
   flex-direction: column;
   align-items: center;
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-/* Print action bar */
+/* Top Action Bar (Screen Only) */
 .action-bar {
   width: 100%;
   max-width: 860px;
@@ -24,11 +28,13 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 12px;
   background: #ffffff;
   padding: 12px 20px;
   border-radius: 10px;
   border: 1px solid #e2e8f0;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 .action-badge {
   display: inline-flex;
@@ -39,30 +45,74 @@ body {
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: #64748b;
+  flex-shrink: 0;
 }
 .dot-live {
   width: 8px;
   height: 8px;
   border-radius: 50%;
   background: #10b981;
+  flex-shrink: 0;
+}
+
+/* Action Controls (Download PDF & Theme Toggle) */
+.action-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.btn-theme {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+  color: #475569;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.15s ease;
+}
+.btn-theme:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+  border-color: #cbd5e1;
+}
+.btn-theme .icon-sun {
+  display: none;
+}
+.btn-theme .icon-moon {
+  display: block;
 }
 .btn-print {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  background: #0f172a;
-  color: #ffffff;
+  justify-content: center;
+  gap: 7px;
+  height: 34px;
+  background: #f8fafc;
+  color: #475569;
   font-size: 12px;
   font-weight: 600;
-  padding: 8px 16px;
+  padding: 0 14px;
   border-radius: 6px;
-  border: none;
+  border: 1px solid #e2e8f0;
   cursor: pointer;
   text-decoration: none;
-  transition: background 0.15s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: all 0.15s ease;
+}
+.btn-print svg {
+  flex-shrink: 0;
 }
 .btn-print:hover {
-  background: #334155;
+  background: #f1f5f9;
+  color: #0f172a;
+  border-color: #cbd5e1;
 }
 
 /* CV Document Container */
@@ -74,6 +124,7 @@ body {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
   border: 1px solid #e2e8f0;
   padding: 36px 44px;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
 /* Header */
@@ -179,6 +230,7 @@ header {
 /* Section Styles */
 section {
   margin-bottom: 16px;
+  scroll-margin-top: 76px;
 }
 .section-title {
   font-size: 11px;
@@ -208,6 +260,10 @@ section {
 /* Experience */
 .job-block {
   margin-bottom: 12px;
+}
+.job-block-divider {
+  border-top: 1px solid #f1f5f9;
+  padding-top: 10px;
 }
 .job-header {
   display: flex;
@@ -240,6 +296,12 @@ a.edu-link {
   color: #64748b;
   white-space: nowrap;
 }
+.job-summary {
+  font-size: 11px;
+  color: #334155;
+  line-height: 1.48;
+  margin-top: 3px;
+}
 
 .job-bullets {
   list-style-type: disc;
@@ -262,6 +324,9 @@ a.edu-link {
   justify-content: space-between;
   align-items: flex-start;
   margin-bottom: 7px;
+}
+.edu-item-spaced {
+  margin-top: 6px;
 }
 .edu-degree {
   font-size: 12.5px;
@@ -348,6 +413,151 @@ a.edu-link {
   flex-shrink: 0;
 }
 
+/* Screen-only Footer */
+.site-footer {
+  width: 100%;
+  max-width: 860px;
+  margin-top: 16px;
+  padding: 8px 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #64748b;
+}
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.footer-links a {
+  color: #475569;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.15s ease;
+}
+.footer-links a:hover {
+  color: #4338ca;
+}
+
+/* Dark Theme Support (Strictly Scoped to @media screen so Print is Never Affected) */
+@media screen {
+  html[data-theme="dark"] body {
+    background-color: #090d16;
+    color: #e2e8f0;
+  }
+  html[data-theme="dark"] .action-bar {
+    background: #0f172a;
+    border-color: #1e293b;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  }
+  html[data-theme="dark"] .action-badge {
+    color: #94a3b8;
+  }
+  html[data-theme="dark"] .btn-theme {
+    background: #1e293b;
+    border-color: #334155;
+    color: #fbbf24;
+  }
+  html[data-theme="dark"] .btn-theme:hover {
+    background: #334155;
+  }
+  html[data-theme="dark"] .btn-theme .icon-sun {
+    display: block;
+  }
+  html[data-theme="dark"] .btn-theme .icon-moon {
+    display: none;
+  }
+  html[data-theme="dark"] .btn-print {
+    background: #1e293b;
+    border-color: #334155;
+    color: #e2e8f0;
+  }
+  html[data-theme="dark"] .btn-print:hover {
+    background: #334155;
+    color: #ffffff;
+  }
+  html[data-theme="dark"] .page-container {
+    background: #0f172a;
+    border-color: #1e293b;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  }
+  html[data-theme="dark"] header {
+    border-bottom-color: #1e293b;
+  }
+  html[data-theme="dark"] .candidate-name,
+  html[data-theme="dark"] .job-title,
+  html[data-theme="dark"] .job-bullets li strong,
+  html[data-theme="dark"] .edu-degree {
+    color: #f8fafc;
+  }
+  html[data-theme="dark"] .candidate-tagline,
+  html[data-theme="dark"] .job-company {
+    color: #818cf8;
+  }
+  html[data-theme="dark"] .contact-chip {
+    background: #1e293b;
+    border-color: #334155;
+    color: #e2e8f0;
+  }
+  html[data-theme="dark"] .contact-chip:hover {
+    background: #334155;
+    color: #a5b4fc;
+  }
+  html[data-theme="dark"] .contact-chip.chip-accent {
+    background: rgba(79, 70, 229, 0.2);
+    border-color: rgba(129, 140, 248, 0.4);
+    color: #a5b4fc;
+  }
+  html[data-theme="dark"] .treaty-badge {
+    background: rgba(16, 185, 129, 0.12);
+    border-color: rgba(52, 211, 153, 0.3);
+    color: #a7f3d0;
+  }
+  html[data-theme="dark"] .treaty-badge svg {
+    color: #34d399;
+  }
+  html[data-theme="dark"] .section-title {
+    color: #94a3b8;
+  }
+  html[data-theme="dark"] .section-title::after {
+    background: #1e293b;
+  }
+  html[data-theme="dark"] .job-block-divider {
+    border-top-color: #1e293b;
+  }
+  html[data-theme="dark"] .summary-text,
+  html[data-theme="dark"] .job-bullets li,
+  html[data-theme="dark"] .job-summary,
+  html[data-theme="dark"] .skill-list li,
+  html[data-theme="dark"] .cert-row {
+    color: #cbd5e1;
+  }
+  html[data-theme="dark"] .edu-school,
+  html[data-theme="dark"] .job-meta {
+    color: #94a3b8;
+  }
+  html[data-theme="dark"] .scholarship-badge {
+    background: rgba(234, 179, 8, 0.14);
+    border-color: rgba(250, 204, 21, 0.35);
+    color: #fef08a;
+  }
+  html[data-theme="dark"] .skill-box {
+    background: #1e293b;
+    border-color: #334155;
+  }
+  html[data-theme="dark"] .skill-heading {
+    color: #a5b4fc;
+  }
+  html[data-theme="dark"] .site-footer,
+  html[data-theme="dark"] .footer-links a {
+    color: #94a3b8;
+  }
+  html[data-theme="dark"] .footer-links a:hover {
+    color: #a5b4fc;
+  }
+}
+
 /* Responsive Screen Styles (Isolated from @media print) */
 @media screen and (max-width: 768px) {
   body {
@@ -386,6 +596,14 @@ a.edu-link {
   .action-bar {
     padding: 10px 14px;
     border-radius: 8px;
+    gap: 8px;
+  }
+  .action-controls {
+    gap: 6px;
+  }
+  .btn-print {
+    padding: 0 12px;
+    font-size: 11.5px;
   }
   .page-container {
     padding: 22px 18px;
@@ -462,16 +680,31 @@ a.edu-link {
   .cert-dot {
     margin-top: 6px;
   }
+  .site-footer {
+    flex-direction: column;
+    gap: 6px;
+    text-align: center;
+  }
 }
 
 @media screen and (max-width: 380px) {
   .action-bar {
-    flex-wrap: wrap;
-    gap: 8px;
+    padding: 8px 10px;
+    gap: 6px;
+  }
+  .action-badge {
+    font-size: 10px;
+    gap: 5px;
   }
   .btn-print {
-    width: 100%;
-    justify-content: center;
+    height: 30px;
+    padding: 0 9px;
+    font-size: 11px;
+    gap: 5px;
+  }
+  .btn-theme {
+    width: 30px;
+    height: 30px;
   }
   .candidate-name {
     font-size: 22px;
