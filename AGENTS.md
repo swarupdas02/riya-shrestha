@@ -14,7 +14,7 @@ A single page online CV for **Riya Shrestha** (banking compliance / AML-CFT prof
 | Default Pages URL | `https://swarupdas02.github.io/riya-shrestha/` |
 | Custom domain | `riyashrestha.id` (plus `www.riyashrestha.id`) |
 | Registrar / DNS | Hostinger hPanel |
-| Stack | One static, self contained HTML file. No build step, no framework, no JS dependencies, no CDN. |
+| Stack | Static HTML (`index.html`) + local stylesheet (`styles.css`). No build step, no framework, no JS dependencies, no CDN. |
 
 ### Goals (from the owner)
 1. Turn a Markdown CV source into a polished, professional CV.
@@ -28,7 +28,8 @@ A single page online CV for **Riya Shrestha** (banking compliance / AML-CFT prof
 
 ```text
 riya-shrestha/
-├── index.html     # The entire CV: markup + embedded CSS (screen and print)
+├── index.html     # The CV markup
+├── styles.css     # All CSS: desktop base, responsive (@media screen), and print (@media print)
 ├── CV.md          # Single Source of Truth (SSOT) for all CV text, sections, and links
 ├── AGENTS.md      # Project reference and rules for AI agents and developers
 ├── favicon.svg    # "RS" monogram icon (primary)
@@ -53,9 +54,10 @@ riya-shrestha/
 
 ---
 
-## 3. How `index.html` is built
+## 3. How `index.html` and `styles.css` are built
 
-- **Pure CSS in one `<style>` block.** An earlier version used the Tailwind CDN and Google Fonts. Both were removed because headless PDF rendering ran out of time and gave a broken 9 page PDF. Keep the file self contained.
+- **Pure CSS in `styles.css`.** An earlier version used the Tailwind CDN and Google Fonts. Both were removed because headless PDF rendering ran out of time and gave a broken 9 page PDF. Keep the repository self contained with zero external network dependencies.
+- **Responsive layout (`@media screen`):** Scoped strictly to `@media screen` (`max-width: 768px`, `600px`, and `380px`) so tablet and mobile viewports stack cleanly without affecting `@media print`.
 - **Font:** system font stack (`-apple-system, Segoe UI, Roboto, Arial…`).
 - **Palette:** slate text (`#0f172a`, `#334155`, `#64748b`), indigo accent (`#4338ca`, `#6366f1`), emerald for the eligibility badge (`#f0fdf4` / `#bbf7d0` / `#14532d`), amber for the scholarship badge.
 - **Screen only elements:** anything with class `.no-print` (the top action bar with the "Print / Save to PDF" button) is hidden when printing.
